@@ -8,5 +8,6 @@ data = Quantitative_Methodology_Final_Project_Participant_Analysis1_Sheet1_
 
 data$F1_mean <- rowMeans(data[ c("F1 - Attempt 1", "F1 - Attempt 2", "F1 - Attempt 3")])
 data$F2_mean <- rowMeans(data[c("F2 - Attempt 1", "F2 - Attempt 2", "F2 - Attempt 3")])
+#Testing git pushing
 ```
 
