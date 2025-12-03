@@ -12,6 +12,8 @@ data$F2_mean <- rowMeans(data[c("F2 - Attempt 1", "F2 - Attempt 2", "F2 - Attemp
 
 #new testing for Eleanor
 
+
+#testing
 ```
 
 
