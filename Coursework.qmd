@@ -4,19 +4,205 @@ format: html
 ---
 
 ```{r}
-data = Quantitative_Methodology_Final_Project_Participant_Analysis1_Sheet1_
+library(tidyverse)
+theme_set(theme_light())
+library(brms)
+library(posterior)
+library(tidybayes)
+library(dplyr)
+library(ggplot2)
+
+data <- read_csv('Quantitative Methodology Final Project - Participant Analysis1(Sheet1).csv')
+
+data <- data %>% select(where(~ !all(is.na(.x))))
 
 data$F1_mean <- rowMeans(data[ c("F1 - Attempt 1", "F1 - Attempt 2", "F1 - Attempt 3")])
 data$F2_mean <- rowMeans(data[c("F2 - Attempt 1", "F2 - Attempt 2", "F2 - Attempt 3")])
-#Testing git pushing
 
-#new testing for Eleanor
+data
 
-
-#testing
-
-#testing2
 ```
+
+```{r}
+data_no_classifiers <- data |>
+  filter(Accent != "American - Classifier" & Accent != "Canadian - Classifier")
+
+data_scottish <- data_no_classifiers |>
+  filter(Accent == "Scottish")
+
+data_english <- data_no_classifiers |>
+  filter(Accent == "Northern English")
+
+data_american <- data_no_classifiers |>
+  filter(Accent == "American")
+
+data_no_classifiers <- data_no_classifiers %>%
+  mutate(Participant = as.character(Participant))
+```
+
+```{r}
+data_no_classifiers |>
+ggplot(aes(F2_mean, F1_mean, colour = Participant)) +
+  geom_point(alpha = 0.5) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2_mean", y = "F1_mean")
+```
+
+```{r}
+data_normalised <- data_no_classifiers |> 
+  group_by(Participant) |> 
+  mutate(
+    F1_mean_normalised = (F1_mean - mean(F1_mean)) / sd(F1_mean),
+    F2_mean_normalised = (F2_mean - mean(F2_mean)) / sd(F2_mean)
+  ) |> 
+  ungroup()
+```
+
+```{r}
+
+data_normalised <- data_normalised |> 
+  mutate(
+    F1_mean_normalised_Hz = (F1_mean_normalised * sd(F1_mean)) + mean(F1_mean),
+    F2_mean_normalised_Hz = (F2_mean_normalised * sd(F2_mean)) + mean(F2_mean)
+  )
+
+```
+
+```{r}
+data_normalised |>
+ggplot(aes(F2_mean_normalised_Hz, F1_mean_normalised_Hz, colour = Word, shape = Gender)) +
+  geom_point(alpha = 0.5) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2 - Normalised", y = "F1 - Normalised") +
+  facet_wrap (~Accent, nrow = 1)
+  
+```
+```{r}
+
+data_no_classifiers |>
+ggplot(aes(F2_mean, F1_mean, colour = Word, shape = Gender)) +
+  geom_point(alpha = 0.5) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2", y = "F1") +
+  facet_wrap (~Accent, nrow = 1)
+  
+
+```
+
+```{r}
+data_normalised |>
+ggplot(aes(F2_mean_normalised_Hz, F1_mean_normalised_Hz, colour = Participant)) +
+  geom_point(alpha = 0.5) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2_mean", y = "F1_mean")
+```
+
+```{r}
+
+library(mclust)
+# With English Accents
+
+# Select F1 and F2 columns
+f1f2 <- data_normalised[, c("F1_mean_normalised_Hz", "F2_mean_normalised_Hz")]
+
+# Fit Gaussian mixture model (let BIC choose number of components)
+gmm <- Mclust(f1f2)
+
+# Inspect summary
+summary(gmm)
+
+# Add cluster assignments to your dataframe
+data_normalised$cluster <- gmm$classification
+
+# Plot clusters
+library(ggplot2)
+ggplot(data_normalised, aes(F2_mean, F1_mean, colour = factor(cluster), shape = Word)) +
+  geom_point(alpha = 0.7) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2 - Normalised", y = "F1 - Normalised")
+
+```
+
+```{r}
+
+# Indices for Northern English
+northern_idx <- which(data_normalised$Accent == "Northern English")
+
+# Extract posterior probabilities from gmm$z
+northern_probs <- gmm$z[northern_idx, , drop = FALSE]
+
+# Round to 2 decimal places
+northern_probs <- round(northern_probs, 2)
+
+# Convert to tibble
+northern_tibble <- as_tibble(northern_probs)
+
+# Name columns as clusters
+colnames(northern_tibble) <- paste0("Cluster_", 1:ncol(northern_probs))
+
+# Add row names as Word
+northern_tibble <- northern_tibble %>%
+  add_column(Word = data_normalised$Word[northern_idx], .before = 1)
+
+# Show the tibble
+northern_tibble
+```
+
+```{r}
+
+# Gaussian Mixture modelling, without the English data. Produces a perfect classification of vowel sound depending on word. 
+
+data_no_english <- data_normalised |>
+  filter(Accent != "Northern English")
+
+f1f2 <- data_no_english[, c("F1_mean_normalised_Hz", "F2_mean_normalised_Hz")]
+
+# Fit Gaussian mixture model (let BIC choose number of components)
+gmm <- Mclust(f1f2)
+
+# Inspect summary
+summary(gmm)
+
+# Add cluster assignments to your dataframe
+data_no_english$cluster <- gmm$classification
+
+# Plot clusters
+library(ggplot2)
+ggplot(data_no_english, aes(F2_mean, F1_mean, colour = factor(cluster), shape = Word)) +
+  geom_point(alpha = 0.7) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2 - Normalised", y = "F1 - Normalised")
+
+```
+
+
+```{r}
+
+#English Gaussian Mixture model Clustering. 
+
+data_english_normalised <- data_normalised |>
+  filter(Accent == "Northern English")
+
+f1f2 <- data_english_normalised[, c("F1_mean_normalised_Hz", "F2_mean_normalised_Hz")]
+
+# Fit Gaussian mixture model (let BIC choose number of components)
+gmm <- Mclust(f1f2)
+
+# Inspect summary
+summary(gmm)
+
+# Add cluster assignments to your dataframe
+data_english_normalised$cluster <- gmm$classification
+
+# Plot clusters
+library(ggplot2)
+ggplot(data_english_normalised, aes(F2_mean_normalised_Hz, F1_mean_normalised_Hz, colour = factor(cluster), shape = Gender)) +
+  geom_point(alpha = 0.7) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2 - Normalised", y = "F1 - Normalised")
+
+```
+
 
 
 
