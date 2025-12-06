@@ -12,7 +12,7 @@ library(bayesplot)
 library(dplyr)
 library(ggplot2)
 
-data <- read_csv('Quantitative Methodology Final Project - Participant Analysis1(Sheet1).csv')
+data <- read_csv('QML/Quantitative Methodology Final Project - Participant Analysis1(Sheet1).csv')
 
 data <- data %>% select(where(~ !all(is.na(.x))))
 
@@ -203,6 +203,104 @@ ggplot(data_english_normalised, aes(F2_mean_normalised_Hz, F1_mean_normalised_Hz
 
 ```
 
+```{r}
+data_normalised
+```
 
 
+```{r}
+data_f1_bm <- brm(
+  F1_mean_normalised_Hz ~ Accent*Word,
+  family = gaussian,
+  data = data_normalised,
+  cores = 4,
+  seed = 20912,
+  file = "cache/data_f1_bm"
+)
+```
+
+```{r}
+summary(data_f1_bm)
+```
+
+```{r}
+data_f1_bm_draws <- as_draws_df(data_f1_bm)
+data_f1_bm_draws
+```
+
+```{r}
+f1_draws <- data_f1_bm_draws |> 
+  mutate(
+    WordLook_American = b_Intercept,
+    WordLook_NorthernEnglish = b_Intercept + b_AccentNorthernEnglish,
+    WordLook_Scottish = b_Intercept + b_AccentScottish,
+    WordLuck_American = b_Intercept + b_WordLuck,
+    WordLuck_NorthernEnglish = b_Intercept + b_AccentNorthernEnglish + `b_AccentNorthernEnglish:WordLuck`,
+    WordLuck_Scottish= b_Intercept + b_AccentScottish + `b_AccentScottish:WordLuck`,
+  )
+
+f1_draws
+```
+
+```{r}
+f1_bm_long <- f1_draws |> 
+  select(WordLook_American:WordLuck_Scottish) |> 
+  pivot_longer(everything(), names_to = "Accent_Word") |>
+separate(Accent_Word, c("Accent", "Word"))
+```
+
+```{r}
+f1_bm_long |>
+  ggplot(aes(value, Accent)) +
+  stat_halfeye() +
+  facet_grid(cols = vars(Word), scales = "free_x")
+```
+
+```{r}
+data_f2_bm <- brm(
+  F2_mean_normalised_Hz ~ Accent*Word,
+  family = gaussian,
+  data = data_normalised,
+  cores = 4,
+  seed = 20912,
+  file = "cache/data_f2_bm"
+)
+```
+
+```{r}
+summary(data_f2_bm)
+```
+
+```{r}
+data_f2_bm_draws <- as_draws_df(data_f2_bm)
+data_f2_bm_draws
+```
+
+```{r}
+f2_draws <- data_f2_bm_draws |> 
+  mutate(
+    WordLook_American = b_Intercept,
+    WordLook_NorthernEnglish = b_Intercept + b_AccentNorthernEnglish,
+    WordLook_Scottish = b_Intercept + b_AccentScottish,
+    WordLuck_American = b_Intercept + b_WordLuck,
+    WordLuck_NorthernEnglish = b_Intercept + b_AccentNorthernEnglish + `b_AccentNorthernEnglish:WordLuck`,
+    WordLuck_Scottish= b_Intercept + b_AccentScottish + `b_AccentScottish:WordLuck`,
+  )
+
+f2_draws
+```
+
+```{r}
+f2_bm_long <- f2_draws |> 
+  select(WordLook_American:WordLuck_Scottish) |> 
+  pivot_longer(everything(), names_to = "Accent_Word") |>
+separate(Accent_Word, c("Accent", "Word"))
+```
+
+```{r}
+f1_bm_long |>
+  ggplot(aes(value, Accent)) +
+  stat_halfeye() +
+  facet_grid(cols = vars(Word), scales = "free_x")
+```
 
