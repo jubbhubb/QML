@@ -299,7 +299,7 @@ separate(Accent_Word, c("Accent", "Word"))
 ```
 
 ```{r}
-f1_bm_long |>
+f2_bm_long |>
   ggplot(aes(value, Accent)) +
   stat_halfeye() +
   facet_grid(cols = vars(Word), scales = "free_x") +
