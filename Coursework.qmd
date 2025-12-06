@@ -8,7 +8,7 @@ library(tidyverse)
 theme_set(theme_light())
 library(brms)
 library(posterior)
-library(tidybayes)
+library(bayesplot)
 library(dplyr)
 library(ggplot2)
 
