@@ -1,145 +1,145 @@
-﻿Participant ,Accent,Word,Sentence Number,F1,F2,Expected,Realized,IPA of Vowel,Gender,Age
-1,Scottish,Look,1,451.81,1334.41,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,1,460.1,1353.41,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,1,425.2,1328.93,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,2,434.14,1397.27,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,2,434.47,1359.31,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,2,413.29,1347.74,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,3,371.89,1315.26,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,3,449.11,1270.3,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Look,3,413.54,1419.03,/lʉk/,/lʉk/,,Male - Cis,20
-1,Scottish,Luck,4,629.36,958.77,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,4,634.22,979.88,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,4,609.38,1010.88,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,5,626.63,1053.11,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,5,666.41,1101.83,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,5,607.73,1068.87,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,6,635.53,1084.71,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,6,577.65,1112.08,/lʌk/,/lʌk/,,Male - Cis,20
-1,Scottish,Luck,6,593.36,1019.73,/lʌk/,/lʌk/,,Male - Cis,20
-2,Scottish,Look,1,384.49,1649.33,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,1,482.34,1719.27,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,1,458.42,1520.64,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,2,411.67,1322.12,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,2,394.84,1315.35,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,2,464.95,1356.45,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,3,394.58,1175.79,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,3,404.7,1170.91,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Look,3,412.75,1108.98,/lʉk/,/lʉk/,,Female - Cis,19
-2,Scottish,Luck,4,534.74,1070.9,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,4,682.26,1144.76,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,4,669.65,1176.86,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,5,594.94,1189.62,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,5,546.91,1194.57,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,5,651.17,1147.93,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,6,660.02,1128,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,6,564.71,1085.32,/lʌk/,/lʌk/,,Female - Cis,19
-2,Scottish,Luck,6,594.94,1091.82,/lʌk/,/lʌk/,,Female - Cis,19
-3,Northern English,Look,1,492.26,1114.45,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,1,515.86,1141.48,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,1,489.85,1159.33,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,2,491.22,1151.46,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,2,494.48,1257.76,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,2,505.51,1171.87,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,3,513.16,1083.16,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,3,488.32,1087.8,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Look,3,497.15,1135.01,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,4,471.09,1112.69,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,4,488.79,1103.16,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,4,491.45,1095.93,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,5,504.68,1145.53,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,5,506.8,1115.88,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,5,503.57,1204,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,6,522.17,1119.48,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,6,510.51,1131.44,/lʊk/,/lʊk/,,Male - Cis,23
-3,Northern English,Luck,6,537.3,1155.32,/lʊk/,/lʊk/,,Male - Cis,23
-4,Northern English,Look,1,640.23,1388.32,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,1,730.09,1470.78,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,1,671.02,1434.8,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,2,594.24,1498.12,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,2,621.32,1510.37,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,2,658.86,1500,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,3,616.8,1525.73,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,3,787.6,1600.6,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Look,3,768.95,1534.85,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,4,785.03,1506.09,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,4,723.07,1459.89,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,4,715.86,1483.51,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,5,645.76,1443.14,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,5,679.88,1369.86,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,5,764.58,1430.38,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,6,656.77,1469.36,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,6,645.86,1525.35,/lʊk/,/lʊk/,,Female - Cis,21
-4,Northern English,Luck,6,703.48,1524.71,/lʊk/,/lʊk/,,Female - Cis,21
-5,American,Look,1,459.19,1237.24,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,1,451.46,1268.5,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,1,495.61,1404.42,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,2,529.4,1212.93,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,2,521.14,1225.21,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,2,532.02,1255.64,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,3,499.72,1138.55,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,3,548.13,1177.79,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Look,3,516.06,1309.61,/lʊk/,/lʊk/,,Transgender - Male,19
-5,American,Luck,4,687.68,1236.98,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,4,646.06,1199.97,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,4,742.96,1253.2,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,5,565.52,1321.61,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,5,621.9,1306.76,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,5,701.39,1289.36,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,6,689.12,1263.11,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,6,650.63,1151.97,/lʌk/,/lʌk/,,Transgender - Male,19
-5,American,Luck,6,625.2,1181.72,/lʌk/,/lʌk/,,Transgender - Male,19
-6,American,Look,1,553.12,1487.62,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,1,571.09,1443.71,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,1,527.13,1578.21,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,2,477.98,1423.53,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,2,524.72,1439.89,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,2,500.76,1351.84,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,3,502.9,1504.87,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,3,487.12,1532.97,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Look,3,566.38,1430.86,/lʊk/,/lʊk/,,Female - Cis,21
-6,American,Luck,4,782.94,1350.95,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,4,768.02,1418.7,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,4,657.27,1309.04,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,5,677.72,1310.04,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,5,743.39,1522.88,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,5,786.92,1306.34,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,6,660.2,1517.19,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,6,694.26,1372.94,/lʌk/,/lʌk/,,Female - Cis,21
-6,American,Luck,6,683.39,1386.09,/lʌk/,/lʌk/,,Female - Cis,21
-7,American - Classifier,Look,1,515.72,1252.42,-,-,,Male - Cis,22
-7,American - Classifier,Look,1,531.99,1222.36,-,-,,Male - Cis,22
-7,American - Classifier,Look,1,505.76,1217.74,-,-,,Male - Cis,22
-7,American - Classifier,Look,2,534,1157.88,-,-,,Male - Cis,22
-7,American - Classifier,Look,2,495.81,1282.85,-,-,,Male - Cis,22
-7,American - Classifier,Look,2,479.86,1247.6,-,-,,Male - Cis,22
-7,American - Classifier,Look,3,529.8,1201.02,-,-,,Male - Cis,22
-7,American - Classifier,Look,3,525.07,1236.21,-,-,,Male - Cis,22
-7,American - Classifier,Look,3,543.29,1221.12,-,-,,Male - Cis,22
-7,American - Classifier,Luck,4,662.97,1167.15,-,-,,Male - Cis,22
-7,American - Classifier,Luck,4,677.29,1233.71,-,-,,Male - Cis,22
-7,American - Classifier,Luck,4,647.57,1229.2,-,-,,Male - Cis,22
-7,American - Classifier,Luck,5,698.16,1181.31,-,-,,Male - Cis,22
-7,American - Classifier,Luck,5,671.65,1193.89,-,-,,Male - Cis,22
-7,American - Classifier,Luck,5,664.97,1262.01,-,-,,Male - Cis,22
-7,American - Classifier,Luck,6,639.9,1175.56,-,-,,Male - Cis,22
-7,American - Classifier,Luck,6,647.23,1224.74,-,-,,Male - Cis,22
-7,American - Classifier,Luck,6,675.42,1219.75,-,-,,Male - Cis,22
-8,Canadian - Classifier,Look,1,581.44,1190.7,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,1,571.79,1245.69,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,1,524.39,1265.42,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,2,528.79,1216.36,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,2,504.54,1217.3,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,2,582.91,1236.15,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,3,565.93,1249.23,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,3,530.37,1218.85,-,-,,Male - Cis,20
-8,Canadian - Classifier,Look,3,572.63,1213.31,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,4,833.47,1258.52,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,4,771.39,1339.26,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,4,789.29,1222.73,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,5,649.1,1312.89,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,5,822.48,1257.52,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,5,759.77,1378.36,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,6,749.56,1223.43,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,6,759.54,1353.63,-,-,,Male - Cis,20
-8,Canadian - Classifier,Luck,6,753.25,1317.45,-,-,,Male - Cis,20
+﻿Participant ,Accent,Word,Sentence Number,F1,F2,Expected,Realized,IPA of Vowel,Gender,Age,Attempt
+1,Scottish,Look,1,451.81,1334.41,/lʉk/,/lʉk/,,Male - Cis,20,1
+1,Scottish,Look,1,460.1,1353.41,/lʉk/,/lʉk/,,Male - Cis,20,2
+1,Scottish,Look,1,425.2,1328.93,/lʉk/,/lʉk/,,Male - Cis,20,3
+1,Scottish,Look,2,434.14,1397.27,/lʉk/,/lʉk/,,Male - Cis,20,1
+1,Scottish,Look,2,434.47,1359.31,/lʉk/,/lʉk/,,Male - Cis,20,2
+1,Scottish,Look,2,413.29,1347.74,/lʉk/,/lʉk/,,Male - Cis,20,3
+1,Scottish,Look,3,371.89,1315.26,/lʉk/,/lʉk/,,Male - Cis,20,1
+1,Scottish,Look,3,449.11,1270.3,/lʉk/,/lʉk/,,Male - Cis,20,2
+1,Scottish,Look,3,413.54,1419.03,/lʉk/,/lʉk/,,Male - Cis,20,3
+1,Scottish,Luck,4,629.36,958.77,/lʌk/,/lʌk/,,Male - Cis,20,1
+1,Scottish,Luck,4,634.22,979.88,/lʌk/,/lʌk/,,Male - Cis,20,2
+1,Scottish,Luck,4,609.38,1010.88,/lʌk/,/lʌk/,,Male - Cis,20,3
+1,Scottish,Luck,5,626.63,1053.11,/lʌk/,/lʌk/,,Male - Cis,20,1
+1,Scottish,Luck,5,666.41,1101.83,/lʌk/,/lʌk/,,Male - Cis,20,2
+1,Scottish,Luck,5,607.73,1068.87,/lʌk/,/lʌk/,,Male - Cis,20,3
+1,Scottish,Luck,6,635.53,1084.71,/lʌk/,/lʌk/,,Male - Cis,20,1
+1,Scottish,Luck,6,577.65,1112.08,/lʌk/,/lʌk/,,Male - Cis,20,2
+1,Scottish,Luck,6,593.36,1019.73,/lʌk/,/lʌk/,,Male - Cis,20,3
+2,Scottish,Look,1,384.49,1649.33,/lʉk/,/lʉk/,,Female - Cis,19,1
+2,Scottish,Look,1,482.34,1719.27,/lʉk/,/lʉk/,,Female - Cis,19,2
+2,Scottish,Look,1,458.42,1520.64,/lʉk/,/lʉk/,,Female - Cis,19,3
+2,Scottish,Look,2,411.67,1322.12,/lʉk/,/lʉk/,,Female - Cis,19,1
+2,Scottish,Look,2,394.84,1315.35,/lʉk/,/lʉk/,,Female - Cis,19,2
+2,Scottish,Look,2,464.95,1356.45,/lʉk/,/lʉk/,,Female - Cis,19,3
+2,Scottish,Look,3,394.58,1175.79,/lʉk/,/lʉk/,,Female - Cis,19,1
+2,Scottish,Look,3,404.7,1170.91,/lʉk/,/lʉk/,,Female - Cis,19,2
+2,Scottish,Look,3,412.75,1108.98,/lʉk/,/lʉk/,,Female - Cis,19,3
+2,Scottish,Luck,4,534.74,1070.9,/lʌk/,/lʌk/,,Female - Cis,19,1
+2,Scottish,Luck,4,682.26,1144.76,/lʌk/,/lʌk/,,Female - Cis,19,2
+2,Scottish,Luck,4,669.65,1176.86,/lʌk/,/lʌk/,,Female - Cis,19,3
+2,Scottish,Luck,5,594.94,1189.62,/lʌk/,/lʌk/,,Female - Cis,19,1
+2,Scottish,Luck,5,546.91,1194.57,/lʌk/,/lʌk/,,Female - Cis,19,2
+2,Scottish,Luck,5,651.17,1147.93,/lʌk/,/lʌk/,,Female - Cis,19,3
+2,Scottish,Luck,6,660.02,1128,/lʌk/,/lʌk/,,Female - Cis,19,1
+2,Scottish,Luck,6,564.71,1085.32,/lʌk/,/lʌk/,,Female - Cis,19,2
+2,Scottish,Luck,6,594.94,1091.82,/lʌk/,/lʌk/,,Female - Cis,19,3
+3,Northern English,Look,1,492.26,1114.45,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Look,1,515.86,1141.48,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Look,1,489.85,1159.33,/lʊk/,/lʊk/,,Male - Cis,23,3
+3,Northern English,Look,2,491.22,1151.46,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Look,2,494.48,1257.76,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Look,2,505.51,1171.87,/lʊk/,/lʊk/,,Male - Cis,23,3
+3,Northern English,Look,3,513.16,1083.16,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Look,3,488.32,1087.8,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Look,3,497.15,1135.01,/lʊk/,/lʊk/,,Male - Cis,23,3
+3,Northern English,Luck,4,471.09,1112.69,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Luck,4,488.79,1103.16,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Luck,4,491.45,1095.93,/lʊk/,/lʊk/,,Male - Cis,23,3
+3,Northern English,Luck,5,504.68,1145.53,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Luck,5,506.8,1115.88,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Luck,5,503.57,1204,/lʊk/,/lʊk/,,Male - Cis,23,3
+3,Northern English,Luck,6,522.17,1119.48,/lʊk/,/lʊk/,,Male - Cis,23,1
+3,Northern English,Luck,6,510.51,1131.44,/lʊk/,/lʊk/,,Male - Cis,23,2
+3,Northern English,Luck,6,537.3,1155.32,/lʊk/,/lʊk/,,Male - Cis,23,3
+4,Northern English,Look,1,640.23,1388.32,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Look,1,730.09,1470.78,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Look,1,671.02,1434.8,/lʊk/,/lʊk/,,Female - Cis,21,3
+4,Northern English,Look,2,594.24,1498.12,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Look,2,621.32,1510.37,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Look,2,658.86,1500,/lʊk/,/lʊk/,,Female - Cis,21,3
+4,Northern English,Look,3,616.8,1525.73,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Look,3,787.6,1600.6,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Look,3,768.95,1534.85,/lʊk/,/lʊk/,,Female - Cis,21,3
+4,Northern English,Luck,4,785.03,1506.09,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Luck,4,723.07,1459.89,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Luck,4,715.86,1483.51,/lʊk/,/lʊk/,,Female - Cis,21,3
+4,Northern English,Luck,5,645.76,1443.14,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Luck,5,679.88,1369.86,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Luck,5,764.58,1430.38,/lʊk/,/lʊk/,,Female - Cis,21,3
+4,Northern English,Luck,6,656.77,1469.36,/lʊk/,/lʊk/,,Female - Cis,21,1
+4,Northern English,Luck,6,645.86,1525.35,/lʊk/,/lʊk/,,Female - Cis,21,2
+4,Northern English,Luck,6,703.48,1524.71,/lʊk/,/lʊk/,,Female - Cis,21,3
+5,American,Look,1,459.19,1237.24,/lʊk/,/lʊk/,,Transgender - Male,19,1
+5,American,Look,1,451.46,1268.5,/lʊk/,/lʊk/,,Transgender - Male,19,2
+5,American,Look,1,495.61,1404.42,/lʊk/,/lʊk/,,Transgender - Male,19,3
+5,American,Look,2,529.4,1212.93,/lʊk/,/lʊk/,,Transgender - Male,19,1
+5,American,Look,2,521.14,1225.21,/lʊk/,/lʊk/,,Transgender - Male,19,2
+5,American,Look,2,532.02,1255.64,/lʊk/,/lʊk/,,Transgender - Male,19,3
+5,American,Look,3,499.72,1138.55,/lʊk/,/lʊk/,,Transgender - Male,19,1
+5,American,Look,3,548.13,1177.79,/lʊk/,/lʊk/,,Transgender - Male,19,2
+5,American,Look,3,516.06,1309.61,/lʊk/,/lʊk/,,Transgender - Male,19,3
+5,American,Luck,4,687.68,1236.98,/lʌk/,/lʌk/,,Transgender - Male,19,1
+5,American,Luck,4,646.06,1199.97,/lʌk/,/lʌk/,,Transgender - Male,19,2
+5,American,Luck,4,742.96,1253.2,/lʌk/,/lʌk/,,Transgender - Male,19,3
+5,American,Luck,5,565.52,1321.61,/lʌk/,/lʌk/,,Transgender - Male,19,1
+5,American,Luck,5,621.9,1306.76,/lʌk/,/lʌk/,,Transgender - Male,19,2
+5,American,Luck,5,701.39,1289.36,/lʌk/,/lʌk/,,Transgender - Male,19,3
+5,American,Luck,6,689.12,1263.11,/lʌk/,/lʌk/,,Transgender - Male,19,1
+5,American,Luck,6,650.63,1151.97,/lʌk/,/lʌk/,,Transgender - Male,19,2
+5,American,Luck,6,625.2,1181.72,/lʌk/,/lʌk/,,Transgender - Male,19,3
+6,American,Look,1,553.12,1487.62,/lʊk/,/lʊk/,,Female - Cis,21,1
+6,American,Look,1,571.09,1443.71,/lʊk/,/lʊk/,,Female - Cis,21,2
+6,American,Look,1,527.13,1578.21,/lʊk/,/lʊk/,,Female - Cis,21,3
+6,American,Look,2,477.98,1423.53,/lʊk/,/lʊk/,,Female - Cis,21,1
+6,American,Look,2,524.72,1439.89,/lʊk/,/lʊk/,,Female - Cis,21,2
+6,American,Look,2,500.76,1351.84,/lʊk/,/lʊk/,,Female - Cis,21,3
+6,American,Look,3,502.9,1504.87,/lʊk/,/lʊk/,,Female - Cis,21,1
+6,American,Look,3,487.12,1532.97,/lʊk/,/lʊk/,,Female - Cis,21,2
+6,American,Look,3,566.38,1430.86,/lʊk/,/lʊk/,,Female - Cis,21,3
+6,American,Luck,4,782.94,1350.95,/lʌk/,/lʌk/,,Female - Cis,21,1
+6,American,Luck,4,768.02,1418.7,/lʌk/,/lʌk/,,Female - Cis,21,2
+6,American,Luck,4,657.27,1309.04,/lʌk/,/lʌk/,,Female - Cis,21,3
+6,American,Luck,5,677.72,1310.04,/lʌk/,/lʌk/,,Female - Cis,21,1
+6,American,Luck,5,743.39,1522.88,/lʌk/,/lʌk/,,Female - Cis,21,2
+6,American,Luck,5,786.92,1306.34,/lʌk/,/lʌk/,,Female - Cis,21,3
+6,American,Luck,6,660.2,1517.19,/lʌk/,/lʌk/,,Female - Cis,21,1
+6,American,Luck,6,694.26,1372.94,/lʌk/,/lʌk/,,Female - Cis,21,2
+6,American,Luck,6,683.39,1386.09,/lʌk/,/lʌk/,,Female - Cis,21,3
+7,American - Classifier,Look,1,515.72,1252.42,-,-,,Male - Cis,22,1
+7,American - Classifier,Look,1,531.99,1222.36,-,-,,Male - Cis,22,2
+7,American - Classifier,Look,1,505.76,1217.74,-,-,,Male - Cis,22,3
+7,American - Classifier,Look,2,534,1157.88,-,-,,Male - Cis,22,1
+7,American - Classifier,Look,2,495.81,1282.85,-,-,,Male - Cis,22,2
+7,American - Classifier,Look,2,479.86,1247.6,-,-,,Male - Cis,22,3
+7,American - Classifier,Look,3,529.8,1201.02,-,-,,Male - Cis,22,1
+7,American - Classifier,Look,3,525.07,1236.21,-,-,,Male - Cis,22,2
+7,American - Classifier,Look,3,543.29,1221.12,-,-,,Male - Cis,22,3
+7,American - Classifier,Luck,4,662.97,1167.15,-,-,,Male - Cis,22,1
+7,American - Classifier,Luck,4,677.29,1233.71,-,-,,Male - Cis,22,2
+7,American - Classifier,Luck,4,647.57,1229.2,-,-,,Male - Cis,22,3
+7,American - Classifier,Luck,5,698.16,1181.31,-,-,,Male - Cis,22,1
+7,American - Classifier,Luck,5,671.65,1193.89,-,-,,Male - Cis,22,2
+7,American - Classifier,Luck,5,664.97,1262.01,-,-,,Male - Cis,22,3
+7,American - Classifier,Luck,6,639.9,1175.56,-,-,,Male - Cis,22,1
+7,American - Classifier,Luck,6,647.23,1224.74,-,-,,Male - Cis,22,2
+7,American - Classifier,Luck,6,675.42,1219.75,-,-,,Male - Cis,22,3
+8,Canadian - Classifier,Look,1,581.44,1190.7,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Look,1,571.79,1245.69,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Look,1,524.39,1265.42,-,-,,Male - Cis,20,3
+8,Canadian - Classifier,Look,2,528.79,1216.36,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Look,2,504.54,1217.3,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Look,2,582.91,1236.15,-,-,,Male - Cis,20,3
+8,Canadian - Classifier,Look,3,565.93,1249.23,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Look,3,530.37,1218.85,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Look,3,572.63,1213.31,-,-,,Male - Cis,20,3
+8,Canadian - Classifier,Luck,4,833.47,1258.52,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Luck,4,771.39,1339.26,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Luck,4,789.29,1222.73,-,-,,Male - Cis,20,3
+8,Canadian - Classifier,Luck,5,649.1,1312.89,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Luck,5,822.48,1257.52,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Luck,5,759.77,1378.36,-,-,,Male - Cis,20,3
+8,Canadian - Classifier,Luck,6,749.56,1223.43,-,-,,Male - Cis,20,1
+8,Canadian - Classifier,Luck,6,759.54,1353.63,-,-,,Male - Cis,20,2
+8,Canadian - Classifier,Luck,6,753.25,1317.45,-,-,,Male - Cis,20,3
