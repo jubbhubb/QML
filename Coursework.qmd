@@ -12,6 +12,7 @@ library(bayesplot)
 library(dplyr)
 library(ggplot2)
 library(ggdist)
+library(tidybayes)
 
 data <- read_csv('QML-data.csv')
 
@@ -47,6 +48,51 @@ ggplot(aes(F2, F1, colour = Participant, shape = Word)) +
   geom_point(alpha = 0.5) +
   scale_x_reverse() + scale_y_reverse() +
   labs(x = "F2", y = "F1")
+```
+
+```{r}
+ipa_expected <- tibble(
+  F1 = c(378, 623, 469, 459, 753, 519),  # expected F1 in Hz
+  F2 = c(997, 1200, 1122, 1105, 1426, 1225), # expected F2 in Hz
+  IPA = c("u (Male)", "ʌ (Male)",'ʊ (Male)',"u (Female)", "ʌ (Female)",'ʊ (Female)')   # the IPA symbols to label
+)
+```
+
+```{r}
+library(ggrepel)
+
+data_no_classifiers |>
+  ggplot(aes(F2, F1, colour = Accent, shape = Word)) +
+  
+  # raw points
+  geom_point(alpha = 0.5) +
+  
+  # expected IPA points
+  geom_point(
+    data = ipa_expected,
+    aes(x = F2, y = F1),
+    inherit.aes = FALSE,
+    colour = "black",
+    shape = 8,  # star shape, can choose any
+    size = 3
+  ) +
+  
+  # IPA labels
+  geom_text_repel(
+    data = ipa_expected,
+    aes(x = F2, y = F1, label = IPA),
+    inherit.aes = FALSE,
+    colour = "black",
+    size = 5,
+    nudge_y = 20  # small vertical offset to avoid overlapping points
+  ) +
+  
+  # reverse axes for vowel plot
+  scale_x_reverse() + 
+  scale_y_reverse() +
+  
+  labs(x = "F2 (Hz)", y = "F1 (Hz)") +
+  theme_minimal()
 ```
 
 ```{r}
@@ -91,7 +137,6 @@ ggplot(aes(F2_normalised_Hz, F1_normalised_Hz, colour = Word, shape = Gender)) +
   facet_wrap (~Accent, nrow = 1)
   
 ```
-
 
 ```{r}
 data_no_classifiers |>
@@ -181,13 +226,12 @@ data_no_english$cluster <- gmm$classification
 
 # Plot clusters
 library(ggplot2)
-ggplot(data_no_english, aes(F2, F1, colour = factor(cluster), shape = Word)) +
+ggplot(data_no_english, aes(F2, F1, colour = factor(cluster), shape = Realized)) +
   geom_point(alpha = 0.7) +
   scale_x_reverse() + scale_y_reverse() +
   labs(x = "F2 - Normalised", y = "F1 - Normalised")
 
 ```
-
 
 ```{r}
 #English Gaussian Mixture model Clustering. 
@@ -218,7 +262,6 @@ ggplot(data_english_normalised, aes(F2_normalised_Hz, F1_normalised_Hz, colour =
 ```{r}
 data_normalised
 ```
-
 
 ```{r}
 data_f1_bm <- brm(
@@ -318,3 +361,199 @@ f2_bm_long |>
   labs(x = "F2 Hz", y = "Word")
 ```
 
+```{r}
+data_across_speaker <- data_no_classifiers |> 
+  mutate(
+    F1_z = (F1 - mean(F1)) / sd(F1),
+    F2_z = (F2 - mean(F2)) / sd(F2)
+  )
+
+for_bm <- brm(
+  bf(mvbind(F1_z, F2_z) ~ Word + (Word | Participant)) + set_rescor(),
+  family = gaussian,
+  data = data_across_speaker,
+  seed = 1923,
+  cores = 4,
+  file = "cache/across_speaker"
+)
+
+pred_grid <- tibble(
+  Word = unique(data_across_speaker$Word)
+)
+
+for_draws <- epred_draws(for_bm, newdata = pred_grid, re_formula = NA)
+
+for_draws_wide <- for_draws |> 
+  pivot_wider(names_from = .category, values_from = .epred)
+
+for_draws_wide |> 
+  ggplot(aes(F2z, F1z, colour = Word)) +
+  geom_point(alpha = 0.05) +
+  scale_x_reverse() + scale_y_reverse()
+```
+
+```{r}
+f1m <- mean(data_across_speaker$F1)
+f1sd <- sd(data_across_speaker$F1)
+f2m <- mean(data_across_speaker$F2)
+f2sd <- sd(data_across_speaker$F2)
+
+for_draws_wide <- for_draws_wide |> 
+  mutate(
+    f1z_hz = (F1z * f1sd) + f1m,
+    f2z_hz = (F2z * f2sd) + f2m
+  )
+
+data_english_norm <- data_english |>
+  group_by(Participant) |>
+  mutate(
+    F1_z = (F1 - mean(F1)) / sd(F1),
+    F2_z = (F2 - mean(F2)) / sd(F2)
+  ) |>
+  ungroup()
+
+data_english_norm <- data_english_norm |>
+  mutate(
+    F1_hz = (F1_z * f1sd) + f1m,
+    F2_hz = (F2_z * f2sd) + f2m
+  )
+
+ggplot() +
+  # posterior ellipses from the all-speaker model
+  stat_ellipse(
+    data = for_draws_wide,
+    aes(f2z_hz, f1z_hz, colour = Word),
+    type = "norm",
+    alpha = 0.6
+  ) +
+  
+  # raw English speaker points
+  geom_point(
+    data = data_english_norm,
+    aes(F2_hz, F1_hz, shape = Word),
+    colour = "black",
+    alpha = 0.3, level = 0.9,
+    size = 1
+  ) +
+  
+  scale_x_reverse() + 
+  scale_y_reverse() +
+  theme_minimal()
+
+
+```
+
+```{r}
+data_no_english_classifiers <- data_no_classifiers |>
+  filter(Accent != "Northern English")
+
+data_across_speaker_no_Eng <- data_no_english_classifiers |> 
+  mutate(
+    F1_z = (F1 - mean(F1)) / sd(F1),
+    F2_z = (F2 - mean(F2)) / sd(F2)
+  )
+
+for_bm_no_Eng <- brm(
+  bf(mvbind(F1_z, F2_z) ~ Word + (Word | Participant)) + set_rescor(),
+  family = gaussian,
+  data = data_across_speaker_no_Eng,
+  seed = 1923,
+  cores = 4,
+  file = "cache/across_speaker_no_eng"
+)
+
+pred_grid_no_Eng <- tibble(
+  Word = unique(data_across_speaker_no_Eng$Word)
+)
+
+for_draws_no_Eng <- epred_draws(for_bm_no_Eng, newdata = pred_grid_no_Eng, re_formula = NA)
+
+for_draws_wide_no_Eng <- for_draws_no_Eng |> 
+  pivot_wider(names_from = .category, values_from = .epred)
+
+f1m <- mean(data_across_speaker_no_Eng$F1)
+f1sd <- sd(data_across_speaker_no_Eng$F1)
+f2m <- mean(data_across_speaker_no_Eng$F2)
+f2sd <- sd(data_across_speaker_no_Eng$F2)
+
+for_draws_wide_no_Eng <- for_draws_wide_no_Eng |> 
+  mutate(
+    f1z_hz = (F1z * f1sd) + f1m,
+    f2z_hz = (F2z * f2sd) + f2m
+  )
+
+for_draws_wide_no_Eng |> 
+  ggplot(aes(f2z_hz, f1z_hz, colour = Word)) +
+  geom_point(alpha = 0.05) +
+  scale_x_reverse() + scale_y_reverse()
+
+ggplot() +
+  # posterior ellipses from the all-speaker model
+  stat_ellipse(
+    data = for_draws_wide_no_Eng,
+    aes(f2z_hz, f1z_hz, colour = Word),
+    type = "norm", level = 0.9,
+    alpha = 0.6
+  ) +
+  
+  # raw English speaker points
+  geom_point(
+    data = data_english_norm,
+    aes(F2_hz, F1_hz, shape = Word),
+    colour = "black",
+    alpha = 0.3,
+    size = 1
+  ) +
+  
+  scale_x_reverse() + 
+  scale_y_reverse() +
+  theme_minimal()
+
+```
+```{r}
+install.packages("kableExtra")   # run once
+library(kableExtra)
+
+for_draws_wide_no_Eng |> 
+  group_by(Word) |> 
+  summarise(
+    f1_mean = round(mean(f1z_hz)), f1_sd = round(sd(f1z_hz)),
+    f1_90 = str_glue("[{round(quantile2(f1z_hz)[1])}, {round(quantile2(f1z_hz)[2])}]"),
+    f2_mean = round(mean(f2z_hz)), f2_sd = round(sd(f2z_hz)),
+    f2_90 = str_glue("[{round(quantile2(f2z_hz)[1])}, {round(quantile2(f2z_hz)[2])}]")
+  ) |> 
+  knitr::kable(col.names = rep("", 7), align = "c") |> 
+  add_header_above(c(" " = 1, rep(c("mean" = 1, "SD" = 1, "90% CrI" = 1), 2))) |> 
+  add_header_above(c(" " = 1, "F1" = 3, "F2" = 3))
+
+```
+```{r}
+data_normalised |> 
+  drop_na(Realized) |> 
+  ggplot(aes(F1_normalised_Hz, fill = Realized)) +
+  geom_density(alpha = 0.5)
+
+data_normalised |> 
+  drop_na(Realized) |> 
+  ggplot(aes(F2_normalised_Hz, fill = Realized)) +
+  geom_density(alpha = 0.5)
+
+```
+
+```{r}
+data_normalised |> 
+  drop_na(Realized) |> 
+  ggplot(aes(Realized, F1, fill = Realized)) +
+  geom_jitter(alpha = 0.1, width = 0.2) +
+  geom_violin(alpha = 0.8, width = 0.2) +
+  labs(x = "Realised Pronunciation", y = "F1 Hz") +
+  theme(legend.position = "none")
+
+data_normalised |> 
+  drop_na(Realized) |> 
+  ggplot(aes(Realized, F2, fill = Realized)) +
+  geom_jitter(alpha = 0.1, width = 0.2) +
+  geom_violin(alpha = 0.8, width = 0.2) +
+  labs(x = "Realised Pronunciation", y = "F Hz") +
+  theme(legend.position = "none")
+```
